@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DVlD
 {
-    public partial class Form1 : Form
+    public partial class testFormcs : Form
     {
-        public Form1()
+        public testFormcs()
         {
             InitializeComponent();
+        }
+
+        private void testFormcs_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

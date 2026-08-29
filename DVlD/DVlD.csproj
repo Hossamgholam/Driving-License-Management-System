@@ -33,8 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v25.2, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v25.2, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v25.2, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v25.2.Core, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v25.2, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v25.2, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v25.2, Version=25.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Guna.UI2, Version=2.0.4.8, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.8\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,32 +60,99 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Global Class\ClsUtil.cs" />
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonCard.Designer.cs">
+      <DependentUpon>ctrlPersonCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\CtrlPersonCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\CtrlPersonCardWithFilter.Designer.cs">
+      <DependentUpon>CtrlPersonCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\FrmAddEditPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\FrmAddEditPeople.Designer.cs">
+      <DependentUpon>FrmAddEditPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\FrmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\FrmFindPerson.Designer.cs">
+      <DependentUpon>FrmFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\FrmMangePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\FrmMangePeople.Designer.cs">
+      <DependentUpon>FrmMangePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\FrmShowPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\FrmShowPersonInfo.Designer.cs">
+      <DependentUpon>FrmShowPersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="testFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testFormcs.Designer.cs">
+      <DependentUpon>testFormcs.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrlPersonCard.resx">
+      <DependentUpon>ctrlPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\CtrlPersonCardWithFilter.resx">
+      <DependentUpon>CtrlPersonCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\FrmAddEditPeople.resx">
+      <DependentUpon>FrmAddEditPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\FrmFindPerson.resx">
+      <DependentUpon>FrmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\FrmMangePeople.resx">
+      <DependentUpon>FrmMangePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\FrmShowPersonInfo.resx">
+      <DependentUpon>FrmShowPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="testFormcs.resx">
+      <DependentUpon>testFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -80,7 +163,157 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resource\" />
+    <ProjectReference Include="..\DVIDBusinessLayer\DVIDBusinessLayer.csproj">
+      <Project>{f97fa5e5-9fe8-432b-a881-88932caa5b64}</Project>
+      <Name>DVIDBusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Applications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\nurture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\test-drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Logo Final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Drivers 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\People 400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Users 2 400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Application Types 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\account_settings 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Driver License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Manage Applications 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Add Person 72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\AddPerson 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Number 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Person 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Phone 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Email 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Address 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Country 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Calendar 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Man 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Woman 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Male 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Close 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Close 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Save 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Female 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\PersonDetails 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Delete 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\send email 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Detain 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Detain 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Application Types 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Test Type 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\New Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Renew Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Damaged Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Detained Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Retake Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Local 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\International 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Detain 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Release Detained License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Password 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\sign_out 32 -2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\SearchPerson.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

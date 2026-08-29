@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="DVlD/DVlD.csproj" />
+  <Project Path="G:/universial/specialis/programing advice/c#/19 - Full Real Project - DVLD/DVlD/DVIDBusinessLayer/DVIDBusinessLayer.csproj" Id="f97fa5e5-9fe8-432b-a881-88932caa5b64" />
+  <Project Path="G:/universial/specialis/programing advice/c#/19 - Full Real Project - DVLD/DVlD/DVIDDataAcessLayer/DVIDDataAcessLayer.csproj" Id="b5973e3e-4446-4d31-b0dc-025d1237491c" />
+  <Project Path="G:/universial/specialis/programing advice/c#/19 - Full Real Project - DVLD/DVlD/DVlD/DVlD.csproj" Id="383c89be-b6e0-434a-bd4e-d96bc119cced" />
+  <Project Path="testConsole/testConsole.csproj" Id="fc5a77a4-be11-4dbe-a312-e912a1d847eb" />
 </Solution>
