@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace DVIDDataAcessLayer
 {
     internal static class ClsDataAccessSetting
     {
-        public static string ConnectionString = "Data Source=.;Initial Catalog=DVLD;User ID=sa;Password=sa123456;";
+        public static string ConnectionString = Environment.GetEnvironmentVariable("DVLD_CONNECTION_STRING");
     }
 }
