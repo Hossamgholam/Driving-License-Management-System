@@ -16,7 +16,7 @@ namespace DVIDBusinessLayer
         private enum EnMode { add, update };
         private EnMode _mode;
 
-        public int PersonID { get; set; }
+        public int PersonID { get;set; }
         public string NationalNo { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }

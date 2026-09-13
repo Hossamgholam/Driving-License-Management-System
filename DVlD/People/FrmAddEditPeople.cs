@@ -268,83 +268,85 @@ namespace DVlD.People
                     MessageBoxIcon.Error);
 
                 return;
-                
-            }
 
-            //handerl image
-            //if it handel retrun ture  !true =false
-            if (!HandelImage())
-            {
-                return;
-            }
-
-
-            //full person info into object
-            _person.FirstName=tbFrist.Text.Trim();
-            _person.SecondName=tbSecond.Text.Trim();
-            _person.ThirdName=tbThird.Text.Trim();
-            _person.LastName=tbLast.Text.Trim();
-            _person.NationalNo=tbNationalNO.Text.Trim();
-            _person.Phone=tbPhone.Text.Trim();
-            _person.Email=tbEmail.Text.Trim();
-            _person.Address=tbAddress.Text.Trim();
-
-            if (rbFemal.Checked)
-            {
-                _person.Gender=(byte)EnGender.Female;
             }
             else
             {
-                _person.Gender=(byte)(EnGender.Male);
+
+                //handerl image
+                //if it handel retrun ture  !true =false
+                if (!HandelImage())
+                {
+                    return;
+                }
+
+
+                //full person info into object
+                _person.FirstName=tbFrist.Text.Trim();
+                _person.SecondName=tbSecond.Text.Trim();
+                _person.ThirdName=tbThird.Text.Trim();
+                _person.LastName=tbLast.Text.Trim();
+                _person.NationalNo=tbNationalNO.Text.Trim();
+                _person.Phone=tbPhone.Text.Trim();
+                _person.Email=tbEmail.Text.Trim();
+                _person.Address=tbAddress.Text.Trim();
+
+                if (rbFemal.Checked)
+                {
+                    _person.Gender=(byte)EnGender.Female;
+                }
+                else
+                {
+                    _person.Gender=(byte)(EnGender.Male);
+                }
+
+                _person.DateOfBirth=dtpDateOfBirth.Value;
+
+                _person.NationalityCountryID=ClsCountry.Find(cmbCountry.Text.Trim()).CountryID;
+
+                if (pbImagePerson.ImageLocation!=null)
+                {
+                    _person.ImagePath=pbImagePerson.ImageLocation.ToString();
+                }
+                else
+                {
+                    _person.ImagePath="";
+                }
+
+
+                //check if it save or not
+                if (_person.save())
+                {
+                    MessageBox.Show(
+                       "Person saved successfully.",
+                       "Success",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information
+                   );
+
+                    lblTitle.Text="Update Person";
+                    lblPersonID.Text=_person.PersonID.ToString();
+                    lblPersonID.Tag=_person.PersonID;
+                    _Mode=EnMode.Update;
+
+
+                    //the data that return to form that call this form and  regist in service 
+                    DataBack?.Invoke(this, _person.PersonID);
+
+
+                    // Update the UI
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Failed to save person.",
+                        "Save Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+
             }
-
-            _person.DateOfBirth=dtpDateOfBirth.Value;
-
-            _person.NationalityCountryID=ClsCountry.Find(cmbCountry.Text.Trim()).CountryID;
-
-            if (pbImagePerson.ImageLocation!=null)
-            {
-                _person.ImagePath=pbImagePerson.ImageLocation.ToString();
-            }
-            else
-            {
-                _person.ImagePath="";
-            }
-
-
-            //check if it save or not
-            if (_person.save())
-            {
-                MessageBox.Show(
-                   "Person saved successfully.",
-                   "Success",
-                   MessageBoxButtons.OK,
-                   MessageBoxIcon.Information
-               );
-                
-                lblTitle.Text="Update Person";
-                lblPersonID.Text=_person.PersonID.ToString();
-                lblPersonID.Tag=_person.PersonID;
-                _Mode=EnMode.Update;
-
-
-                //the data that return to form that call this form and  regist in service 
-                DataBack?.Invoke(this, _person.PersonID);
-               
-
-                // Update the UI
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Failed to save person.",
-                    "Save Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-
-
         }
 
 

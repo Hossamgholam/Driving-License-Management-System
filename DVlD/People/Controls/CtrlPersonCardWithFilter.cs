@@ -128,6 +128,10 @@ namespace DVlD.People.Controls
                 {
                     e.Handled=false;
                 }
+                else
+                {
+                    e.Handled=true;
+                }
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using DVlD.People;
+using DVlD.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,10 @@ namespace DVlD
             frm.Show();
         }
 
-      
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmMangeUser();
+            frm.Show();
+        }
     }
 }

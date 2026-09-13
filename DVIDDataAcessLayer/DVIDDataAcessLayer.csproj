@@ -44,6 +44,8 @@
     <Compile Include="ClsCountryDataAccess.cs" />
     <Compile Include="ClsDataAccessSetting.cs" />
     <Compile Include="ClsPersonDataAccess.cs" />
+    <Compile Include="ClsUserDataAccess.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="DTOs\PersonDTO.cs" />
     <Compile Include="HelperMethod\Maping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

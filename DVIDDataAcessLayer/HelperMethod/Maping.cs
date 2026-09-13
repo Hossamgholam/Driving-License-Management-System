@@ -32,5 +32,16 @@ namespace DVIDDataAcessLayer.HelperMethod
                 ImagePath=reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? "" : (string)reader["ImagePath"]
             };
         }
+        public static UserDTO MapingUser(SqlDataReader reader)
+        {
+            return new UserDTO()
+            {
+                UserID=(int)reader["UserID"],
+                PersonID=(int)reader["PersonID"],
+                UserName=(string)reader["UserName"],
+                Password=(string)reader["Password"],
+                IsActive=(bool)reader["IsActive"],
+            };
+        }
     }
 }

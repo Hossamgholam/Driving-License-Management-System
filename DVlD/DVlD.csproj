@@ -114,6 +114,36 @@
     <Compile Include="testFormcs.Designer.cs">
       <DependentUpon>testFormcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\Controls\CtrlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\Controls\CtrlUserCard.Designer.cs">
+      <DependentUpon>CtrlUserCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\FrmAddEditeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmAddEditeUser.Designer.cs">
+      <DependentUpon>FrmAddEditeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\FrmShowUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmShowUserInfo.Designer.cs">
+      <DependentUpon>FrmShowUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\FrmMangeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmMangeUser.Designer.cs">
+      <DependentUpon>FrmMangeUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +172,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="testFormcs.resx">
       <DependentUpon>testFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\Controls\CtrlUserCard.resx">
+      <DependentUpon>CtrlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmAddEditeUser.resx">
+      <DependentUpon>FrmAddEditeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmShowUserInfo.resx">
+      <DependentUpon>FrmShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmMangeUser.resx">
+      <DependentUpon>FrmMangeUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -314,6 +359,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\SearchPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Next 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Add New User 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Add New User 72.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

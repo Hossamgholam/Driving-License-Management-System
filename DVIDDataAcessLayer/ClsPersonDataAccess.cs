@@ -15,6 +15,7 @@ namespace DVIDDataAcessLayer
  
     public class ClsPersonDataAccess
     {
+        //R(find  get)  C(add)  U(update)  D(delete)  (CRUD
         public static bool FindByID(int PersonID, ref PersonDTO person)
         {
             bool found = false;
@@ -249,6 +250,7 @@ namespace DVIDDataAcessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 isExsit = reader.Read();
+                reader.Close();
 
 
             }
@@ -277,6 +279,8 @@ namespace DVIDDataAcessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 isExsit = reader.Read();
+
+                reader.Close() ;
 
 
             }
@@ -307,6 +311,7 @@ namespace DVIDDataAcessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 isExsit = reader.Read();
+                reader.Close();
 
 
             }

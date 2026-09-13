@@ -14,6 +14,7 @@ namespace testConsole
     {
         static void Main(string[] args)
         {
+            #region Person
             #region DataAccessLayer Test
             #region addperson
             // PersonDTO person = new PersonDTO
@@ -181,16 +182,279 @@ namespace testConsole
             #endregion
 
 
-            if (ClsPersonDataAccess.ISExsitNatiionalNo("N1", 1)){
-                Console.WriteLine("is exist");
+            //if (ClsPersonDataAccess.ISExsitNatiionalNo("N1", 1)){
+            //    Console.WriteLine("is exist");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("not exsit");
+            //}
+            #endregion
+            #endregion
+
+            #region User
+            #region DatAccessLayer
+            #region Add
+            //UserDTO userDTO = new UserDTO()
+            //{
+            //    PersonID=2056,
+            //    UserName="Ali22",
+            //    Password="22",
+            //    IsActive=true,
+
+            //};
+            //int UserID = ClsUserDataAccess.Add(userDTO);
+            //Console.WriteLine(UserID);
+
+            #endregion
+
+            #region Find
+            //UserDTO userDTO = new UserDTO();
+            ////if (ClsUserDataAccess.FindByID(0, ref userDTO))
+            ////{
+            ////    Console.WriteLine("user Exsit:");
+            ////}
+            ////else
+            ////{
+            ////    Console.WriteLine("User not Exsit");
+            ////}
+
+            ////if (ClsUserDataAccess.FindByPersonID(2055, ref userDTO))
+            ////{
+            ////    Console.WriteLine("user Exsit:");
+            ////}
+            ////else
+            ////{
+            ////    Console.WriteLine("User not Exsit");
+            ////}
+
+            //if (ClsUserDataAccess.FindByUserNamePassword("Hosam123", "Hossam@2004", ref userDTO))
+            //{
+            //    Console.WriteLine("user Exsit:");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not Exsit");
+            //}
+
+            //if (ClsUserDataAccess.FindByUserName("Hosam123",ref userDTO))
+            //{
+            //    Console.WriteLine("user Exsit:");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not Exsit");
+            //}
+
+            //DataTable dt = new DataTable();
+            //dt=ClsUserDataAccess.GetAll();
+            //if (dt!=null)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        Console.WriteLine(dr["UserName"]+" " +dr["FullName"]);
+            //    }
+            //}
+            //else { Console.WriteLine("No Date"); }
+            #endregion
+
+            #region Update
+
+            //UserDTO userDTO = new UserDTO();
+            //ClsUserDataAccess.FindByID(20, ref userDTO);
+
+            //userDTO.UserName="Hosam123";
+            //userDTO.Password="Hossam@2004";
+            //userDTO.IsActive=false;
+
+            //if (ClsUserDataAccess.Update(userDTO))
+            //{
+            //    Console.WriteLine("Yes");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("no");
+            //}
+
+            #endregion
+
+            #region Delete 
+            //add user
+            //UserDTO userDTO = new UserDTO()
+            //{
+            //    PersonID=2056,
+            //    UserName="Ali22",
+            //    Password="22",
+            //    IsActive=true,
+
+            //};
+            //int UserID = ClsUserDataAccess.Add(userDTO);
+            //Console.WriteLine(UserID);
+
+            ////check if it exsit
+            //if (ClsUserDataAccess.IsExsit(UserID))
+            //{
+            //    Console.WriteLine("is exsit");
+            //    if (ClsUserDataAccess.Delete(UserID))
+            //    {
+            //        Console.WriteLine("Yes");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("no");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Exsit:");
+            //}
+
+            #endregion
+
+            #region isExsit
+            //if (ClsUserDataAccess.IsExistByPersonID(2054))
+            //{
+            //    Console.WriteLine("yes exsit");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("not exsit");
+            //}
+
+            //if (ClsUserDataAccess.IsExist("Hosam123", 20))
+            //{
+            //    Console.WriteLine("you make update for this username so it is note exsit");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("you add new username so this nuser name exsit");
+            //}
+            #endregion
+
+            #region IsPersonidRelate
+            //if (ClsUserDataAccess.IsPerosnIDRelatedToUser(105))
+            //{
+            //    Console.WriteLine("yes");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("no");
+            //}
+
+            //if (ClsUserDataAccess.ChangePassword(17, "Omar12"))
+            //{
+            //    Console.WriteLine("Password change");
+            //}
+            //else { Console.WriteLine("no"); }
+            #endregion
+            #endregion
+
+            #region BussinessLayer
+
+            #region Add update
+            //ClsUser user = new ClsUser();
+            //user.PersonID=2058;
+            //user.UserName="Ahmed1";
+            //user.Password="Ahmed@2004";
+            //user.IsActive = true;
+
+            //if( user.Save())
+            //{
+            //    Console.WriteLine("Yes save:");
+            //}
+            //else { Console.WriteLine("no save"); }
+
+            ////update
+
+            //user.UserName="Ahmed123";
+            //user.IsActive=false;
+
+            //if (user.Save())
+            //{
+            //    Console.WriteLine("yser update");
+            //}
+            //else { Console.WriteLine("not save"); }
+            #endregion
+
+            #region Find
+            //DataTable dt =ClsUser.GetAll();
+            //if (dt!=null)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        Console.WriteLine(dr["UserName"]+" " +dr["FullName"]);
+            //    }
+            //}
+            //else { Console.WriteLine("No Date"); }
+
+            //Console.WriteLine("=========================");
+            //if (ClsUser.Find(0)!=null)
+            //{
+            //    Console.WriteLine("user Exsit:");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not Exsit");
+            //}
+
+            //if (ClsUser.FindByPersonID(2055)!=null)
+            //{
+            //    Console.WriteLine("user Exsit:");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not Exsit");
+            //}
+
+            //if (ClsUser.FindByUserNamePassword("Hossam123", "Hossam@2004")!=null)
+            //{
+            //    Console.WriteLine("user Exsit:");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not Exsit");
+            //}
+
+            //if (ClsUser.FindByUserName("Hosam123")!=null)
+            //{
+            //    Console.WriteLine("user Exsit:");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not Exsit");
+
+
+            //}
+            #endregion
+
+            #region
+            if (ClsUser.IsExistByPersonID(2054))
+            {
+                Console.WriteLine("yes exsit");
             }
             else
             {
                 Console.WriteLine("not exsit");
             }
+
+            if (ClsUser.IsExist("Hosam123", 20))
+            {
+                Console.WriteLine("you make update for this username so it is note exsit");
+            }
+            else
+            {
+                Console.WriteLine("you add new username so this nuser name exsit");
+            }
+            #endregion
+
+
+            #endregion
             #endregion
         }
+
     }
-
-
 }
+    
+
+
+

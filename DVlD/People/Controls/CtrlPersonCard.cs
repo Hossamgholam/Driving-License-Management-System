@@ -17,7 +17,9 @@ namespace DVlD
     public partial class ctrlPersonCard : UserControl
     {
         private ClsPerson _PersonInfo;
-        private int _PersonID;
+
+        //if it still -1 no person 
+        private int _PersonID=-1;
 
         public ClsPerson PersonInfo { get { return _PersonInfo; } }
         public int PersonID { get { return _PersonID; } }

@@ -49,9 +49,9 @@
             this.GbFilter.Controls.Add(this.TxtFilter);
             this.GbFilter.Controls.Add(this.CmbFilter);
             this.GbFilter.Controls.Add(this.lblPersonIDText);
-            this.GbFilter.Location = new System.Drawing.Point(13, 24);
+            this.GbFilter.Location = new System.Drawing.Point(13, 14);
             this.GbFilter.Name = "GbFilter";
-            this.GbFilter.Size = new System.Drawing.Size(818, 101);
+            this.GbFilter.Size = new System.Drawing.Size(818, 92);
             this.GbFilter.TabIndex = 1;
             this.GbFilter.TabStop = false;
             this.GbFilter.Text = "Filter";
@@ -121,10 +121,10 @@
             this.ctrlPersonCardInfo.BackColor = System.Drawing.Color.White;
             this.ctrlPersonCardInfo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrlPersonCardInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ctrlPersonCardInfo.Location = new System.Drawing.Point(13, 142);
+            this.ctrlPersonCardInfo.Location = new System.Drawing.Point(15, 122);
             this.ctrlPersonCardInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ctrlPersonCardInfo.Name = "ctrlPersonCardInfo";
-            this.ctrlPersonCardInfo.Size = new System.Drawing.Size(818, 412);
+            this.ctrlPersonCardInfo.Size = new System.Drawing.Size(816, 353);
             this.ctrlPersonCardInfo.TabIndex = 2;
             // 
             // CtrlPersonCardWithFilter
@@ -134,7 +134,7 @@
             this.Controls.Add(this.GbFilter);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.Name = "CtrlPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(845, 574);
+            this.Size = new System.Drawing.Size(845, 488);
             this.Load += new System.EventHandler(this.CtrlPersonCardWithFilter_Load);
             this.GbFilter.ResumeLayout(false);
             this.GbFilter.PerformLayout();
@@ -150,9 +150,9 @@
         private System.Windows.Forms.TextBox TxtFilter;
         private System.Windows.Forms.ComboBox CmbFilter;
         private System.Windows.Forms.Label lblPersonIDText;
-        private ctrlPersonCard ctrlPersonCardInfo;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private ctrlPersonCard ctrlPersonCardInfo;
     }
 }

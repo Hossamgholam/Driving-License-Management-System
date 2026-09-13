@@ -107,7 +107,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(719, 418);
+            this.groupBox1.Size = new System.Drawing.Size(719, 353);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
@@ -119,7 +119,7 @@
             this.lblPersonID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.lblPersonID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblPersonID.Location = new System.Drawing.Point(214, 28);
+            this.lblPersonID.Location = new System.Drawing.Point(212, 36);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(50, 23);
             this.lblPersonID.TabIndex = 68;
@@ -131,7 +131,7 @@
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblFullName.Location = new System.Drawing.Point(214, 74);
+            this.lblFullName.Location = new System.Drawing.Point(212, 74);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(50, 23);
             this.lblFullName.TabIndex = 60;
@@ -143,7 +143,7 @@
             this.lblNationalNo.AutoSize = true;
             this.lblNationalNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNationalNo.Location = new System.Drawing.Point(214, 116);
+            this.lblNationalNo.Location = new System.Drawing.Point(212, 108);
             this.lblNationalNo.Name = "lblNationalNo";
             this.lblNationalNo.Size = new System.Drawing.Size(50, 23);
             this.lblNationalNo.TabIndex = 61;
@@ -155,7 +155,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPhone.Location = new System.Drawing.Point(214, 158);
+            this.lblPhone.Location = new System.Drawing.Point(212, 142);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(50, 23);
             this.lblPhone.TabIndex = 62;
@@ -167,7 +167,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblEmail.Location = new System.Drawing.Point(214, 200);
+            this.lblEmail.Location = new System.Drawing.Point(212, 176);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(50, 23);
             this.lblEmail.TabIndex = 63;
@@ -179,7 +179,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblGender.Location = new System.Drawing.Point(214, 326);
+            this.lblGender.Location = new System.Drawing.Point(212, 278);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(50, 23);
             this.lblGender.TabIndex = 78;
@@ -191,7 +191,7 @@
             this.lblCountry.AutoSize = true;
             this.lblCountry.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCountry.Location = new System.Drawing.Point(214, 284);
+            this.lblCountry.Location = new System.Drawing.Point(212, 244);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(50, 23);
             this.lblCountry.TabIndex = 77;
@@ -203,7 +203,7 @@
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(214, 368);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(212, 312);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(50, 23);
             this.lblDateOfBirth.TabIndex = 76;
@@ -215,7 +215,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAddress.Location = new System.Drawing.Point(214, 242);
+            this.lblAddress.Location = new System.Drawing.Point(212, 210);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(50, 23);
             this.lblAddress.TabIndex = 75;
@@ -237,7 +237,7 @@
             // 
             this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox10.Image = global::DVlD.Properties.Resources.Country_32;
-            this.pictureBox10.Location = new System.Drawing.Point(144, 284);
+            this.pictureBox10.Location = new System.Drawing.Point(144, 236);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(34, 34);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -248,7 +248,7 @@
             // 
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox9.Image = global::DVlD.Properties.Resources.Calendar_32;
-            this.pictureBox9.Location = new System.Drawing.Point(144, 368);
+            this.pictureBox9.Location = new System.Drawing.Point(144, 304);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(34, 34);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -259,7 +259,7 @@
             // 
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox7.Image = global::DVlD.Properties.Resources.Man_32;
-            this.pictureBox7.Location = new System.Drawing.Point(144, 326);
+            this.pictureBox7.Location = new System.Drawing.Point(144, 270);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(34, 34);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -270,7 +270,7 @@
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.Image = global::DVlD.Properties.Resources.Address_32;
-            this.pictureBox6.Location = new System.Drawing.Point(144, 242);
+            this.pictureBox6.Location = new System.Drawing.Point(144, 202);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(34, 34);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -281,7 +281,7 @@
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = global::DVlD.Properties.Resources.Email_32;
-            this.pictureBox5.Location = new System.Drawing.Point(144, 200);
+            this.pictureBox5.Location = new System.Drawing.Point(144, 168);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(34, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -292,7 +292,7 @@
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = global::DVlD.Properties.Resources.Phone_32;
-            this.pictureBox4.Location = new System.Drawing.Point(144, 158);
+            this.pictureBox4.Location = new System.Drawing.Point(144, 134);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(34, 34);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -303,7 +303,7 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::DVlD.Properties.Resources.Number_32;
-            this.pictureBox3.Location = new System.Drawing.Point(144, 116);
+            this.pictureBox3.Location = new System.Drawing.Point(144, 100);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(34, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -314,7 +314,7 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::DVlD.Properties.Resources.Person_32;
-            this.pictureBox2.Location = new System.Drawing.Point(144, 74);
+            this.pictureBox2.Location = new System.Drawing.Point(144, 66);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -350,7 +350,7 @@
             // 
             this.label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label19.Location = new System.Drawing.Point(6, 242);
+            this.label19.Location = new System.Drawing.Point(6, 202);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(132, 30);
             this.label19.TabIndex = 48;
@@ -361,7 +361,7 @@
             // 
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label13.Location = new System.Drawing.Point(6, 368);
+            this.label13.Location = new System.Drawing.Point(6, 304);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 30);
             this.label13.TabIndex = 54;
@@ -372,7 +372,7 @@
             // 
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label14.Location = new System.Drawing.Point(6, 158);
+            this.label14.Location = new System.Drawing.Point(6, 134);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(132, 30);
             this.label14.TabIndex = 53;
@@ -383,7 +383,7 @@
             // 
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label15.Location = new System.Drawing.Point(6, 284);
+            this.label15.Location = new System.Drawing.Point(6, 236);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(132, 30);
             this.label15.TabIndex = 52;
@@ -394,7 +394,7 @@
             // 
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label16.Location = new System.Drawing.Point(6, 116);
+            this.label16.Location = new System.Drawing.Point(6, 100);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(132, 30);
             this.label16.TabIndex = 51;
@@ -405,7 +405,7 @@
             // 
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label17.Location = new System.Drawing.Point(6, 326);
+            this.label17.Location = new System.Drawing.Point(6, 270);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(132, 30);
             this.label17.TabIndex = 50;
@@ -416,7 +416,7 @@
             // 
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label18.Location = new System.Drawing.Point(6, 200);
+            this.label18.Location = new System.Drawing.Point(6, 168);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(132, 30);
             this.label18.TabIndex = 49;
@@ -427,7 +427,7 @@
             // 
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label20.Location = new System.Drawing.Point(6, 74);
+            this.label20.Location = new System.Drawing.Point(6, 66);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(132, 30);
             this.label20.TabIndex = 47;
@@ -437,6 +437,7 @@
             // LnkEditPerson
             // 
             this.LnkEditPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LnkEditPerson.Enabled = false;
             this.LnkEditPerson.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LnkEditPerson.LinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkEditPerson.Location = new System.Drawing.Point(544, 118);
@@ -458,7 +459,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ctrlPersonCard";
-            this.Size = new System.Drawing.Size(719, 418);
+            this.Size = new System.Drawing.Size(719, 353);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

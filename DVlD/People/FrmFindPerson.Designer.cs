@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlPersonCardWithFilter1 = new DVlD.People.Controls.CtrlPersonCardWithFilter();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.ctrlPersonCardWithFilter1 = new DVlD.People.Controls.CtrlPersonCardWithFilter();
             this.SuspendLayout();
-            // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.EnableAddPerson = true;
-            this.ctrlPersonCardWithFilter1.EnableFilterGroup = true;
-            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(76, 59);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(877, 540);
-            this.ctrlPersonCardWithFilter1.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -53,7 +43,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = global::DVlD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(932, 605);
+            this.btnClose.Location = new System.Drawing.Point(746, 562);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 41);
             this.btnClose.TabIndex = 60;
@@ -69,21 +59,31 @@
             this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lblTitle.Location = new System.Drawing.Point(430, 11);
+            this.lblTitle.Location = new System.Drawing.Point(376, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(86, 45);
             this.lblTitle.TabIndex = 61;
             this.lblTitle.Text = "Find";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.EnableAddPerson = true;
+            this.ctrlPersonCardWithFilter1.EnableFilterGroup = true;
+            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(31, 68);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(845, 488);
+            this.ctrlPersonCardWithFilter1.TabIndex = 62;
+            // 
             // FrmFindPerson
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1064, 658);
+            this.ClientSize = new System.Drawing.Size(897, 631);
+            this.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmFindPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -94,9 +94,8 @@
         }
 
         #endregion
-
-        private Controls.CtrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblTitle;
+        private Controls.CtrlPersonCardWithFilter ctrlPersonCardWithFilter1;
     }
 }
