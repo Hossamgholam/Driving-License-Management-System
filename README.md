@@ -2,47 +2,53 @@
 
 A Windows Forms application for managing the core operations of a Driving & Vehicle License Department (DVLD).
 
-The project is being developed incrementally, with the application separated into presentation, business, and data-access responsibilities. The repository documents the implementation as the project grows.
+The project is developed incrementally, with the application separated into presentation, business, and data-access responsibilities. Each major feature is implemented, tested, and documented as the system grows.
 
 ## Project Status
 
 🚧 **In active development**
 
-### Completed / implemented
+### Implemented
 
 - Database design for the main DVLD entities.
-- Three-layer project structure:
-  - Presentation / Windows Forms
-  - Business Layer
-  - Data Access Layer
-- People Management module.
-- Person CRUD operations and search/filtering.
-- Reusable person information controls.
+- Three-layer application structure.
+- People Management.
+- Users Management.
+- Person CRUD, search, and filtering.
+- User CRUD, filtering, validation, and password changes.
+- Reusable person-selection controls used across modules.
 
-### Planned / under development
+### Next Modules
 
-The remaining DVLD modules will be added progressively, including users, applications, drivers, licenses, tests, and related services.
+The remaining DVLD functionality will be added progressively, including applications, drivers, licenses, tests, and related services.
 
 ## Main Features
 
 ### People Management
 
-The People module currently provides:
+The People module provides:
 
-- View people in a tabular interface.
-- Filter people by Person ID, National No, name, nationality, gender, phone, and email.
-- Add a new person.
-- Edit an existing person.
-- Delete a person when database relationships allow it.
-- View detailed person information.
-- Find a person by Person ID or National No.
-- Reusable person-card controls for displaying and selecting person information.
+- Add, edit, view, and delete people.
+- Find people by Person ID or National No.
+- Filter the people list by multiple fields.
+- Reusable controls for displaying and selecting person information.
 
-See the detailed documentation in [`DVlD/People/README.md`](DVlD/People/README.md).
+[People Management documentation](DVlD/People/README.md)
+
+### Users Management
+
+The Users module provides:
+
+- Add, edit, view, and delete user accounts.
+- Link each user to an existing person.
+- Prevent duplicate user accounts for the same person.
+- Validate usernames and passwords.
+- Filter users by account and active status.
+- Change user passwords.
+
+[Users Management documentation](DVlD/User/README.md)
 
 ## Architecture
-
-The application is organized around three main layers:
 
 ```text
 ┌───────────────────────────────┐
@@ -59,7 +65,7 @@ The application is organized around three main layers:
                 ▼
 ┌───────────────────────────────┐
 │      DVIDDataAcessLayer       │
-│ SQL Server / ADO.NET Access   │
+│      SQL Server / ADO.NET     │
 └───────────────┬───────────────┘
                 │
                 ▼
@@ -69,14 +75,12 @@ The application is organized around three main layers:
 └───────────────────────────────┘
 ```
 
-### Layer responsibilities
-
 | Layer | Responsibility |
 |---|---|
-| `DVlD` | Windows Forms screens, controls, user interaction, filtering, and presentation logic. |
-| `DVIDBusinessLayer` | Represents business objects and coordinates operations between the UI and data-access layer. |
-| `DVIDDataAcessLayer` | Executes SQL Server operations and maps database data to DTOs. |
-| `DataBaseDesgin` | Contains the database SQL script and database mapping/design artifacts. |
+| `DVlD` | WinForms screens, controls, user interaction, filtering, and presentation logic. |
+| `DVIDBusinessLayer` | Business objects and application-level operations. |
+| `DVIDDataAcessLayer` | SQL Server operations and DTO mapping through ADO.NET. |
+| `DataBaseDesgin` | Database SQL script and design/mapping artifacts. |
 
 ## Technologies
 
@@ -85,30 +89,16 @@ The application is organized around three main layers:
 - **Windows Forms**
 - **SQL Server**
 - **ADO.NET**
-- **DataTable / DataView** for tabular data and filtering
-- **DTOs** for transferring person data between layers
-- **DevExpress / Guna UI components** currently referenced by the WinForms project
+- **DataTable / DataView**
+- **DTOs**
+- **DevExpress / Guna UI components**
 
 ## Database
 
-The database design contains the main entities required for the DVLD system, including:
+The database design contains the main entities required for the DVLD system, including people, users, applications, license classes, tests, drivers, licenses, detained licenses, and international licenses.
 
-- Countries
-- People
-- Users
-- Application Types
-- License Classes
-- Applications
-- Local Driving License Applications
-- Test Types
-- Test Appointments
-- Tests
-- Drivers
-- Licenses
-- Detained Licenses
-- International Licenses
-
-The SQL design is available in [`DataBaseDesgin/SQLQuery2.sql`](DataBaseDesgin/SQLQuery2.sql), while the visual mapping is available in [`DataBaseDesgin/dvldMaping.drawio`](DataBaseDesgin/dvldMaping.drawio).
+- [SQL Database Design](DataBaseDesgin/SQLQuery2.sql)
+- [Database Mapping](DataBaseDesgin/dvldMaping.drawio)
 
 ## Repository Structure
 
@@ -124,20 +114,18 @@ Driving-License-Management-System/
 │   ├── HelperMethod/
 │   ├── ClsDataAccessSetting.cs
 │   ├── ClsCountryDataAccess.cs
-│   └── ClsPersonDataAccess.cs
+│   ├── ClsPersonDataAccess.cs
+│   └── ClsUserDataAccess.cs
 │
 ├── DVIDBusinessLayer/
 │   ├── ClsCountry.cs
-│   └── ClsPerson.cs
+│   ├── ClsPerson.cs
+│   └── ClsUser.cs
 │
 ├── DVlD/
 │   ├── Global Class/
 │   ├── People/
-│   │   ├── Controls/
-│   │   ├── FrmAddEditPeople.cs
-│   │   ├── FrmFindPerson.cs
-│   │   ├── FrmMangePeople.cs
-│   │   └── FrmShowPersonInfo.cs
+│   ├── User/
 │   └── FrmMain.cs
 │
 ├── testConsole/
@@ -147,42 +135,25 @@ Driving-License-Management-System/
 
 ## Documentation
 
-Detailed documentation will be added for meaningful architectural layers and business features as they are completed.
+Documentation focuses on meaningful features rather than individual classes or forms.
 
 - [People Management](DVlD/People/README.md)
+- [Users Management](DVlD/User/README.md)
 - [Database Design SQL](DataBaseDesgin/SQLQuery2.sql)
 - [Database Mapping](DataBaseDesgin/dvldMaping.drawio)
 
-Additional layer documentation will be added when the corresponding implementation reaches a meaningful milestone.
+Feature documentation describes the implemented workflow, technical decisions, and current scope without duplicating the source code.
 
 ## Development Approach
 
-The project is developed feature by feature rather than documenting every individual class or form.
-
-For each meaningful feature, the documentation focuses on:
+The system is built feature by feature. For each meaningful feature, the repository documents:
 
 1. What the feature does.
-2. How the feature is structured.
-3. How data moves through the layers.
-4. Important implementation decisions.
-5. Problems encountered and how they were solved.
-6. What was learned from the implementation.
+2. How it fits into the application architecture.
+3. Important implementation decisions.
+4. Current limitations and unfinished parts.
 
-This keeps the repository useful both as a project portfolio and as a record of the development process.
-
-## Learning Focus
-
-This project is being used to practice building a multi-layer Windows Forms application with a real relational database. Particular focus areas include:
-
-- Layer separation.
-- SQL Server and ADO.NET.
-- DTO-based data transfer.
-- CRUD operations.
-- Data validation and existence checks.
-- DataTable and DataView filtering.
-- Reusable WinForms UserControls.
-- Connecting UI actions to business and data-access operations.
-- Designing a larger application incrementally.
+This keeps the README useful as both project documentation and a record of the system's development.
 
 ## Repository
 
