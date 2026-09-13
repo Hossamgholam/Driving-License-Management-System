@@ -1,32 +1,29 @@
 # Users Management
 
-The Users Management module provides the administration of application users and connects each user account to an existing person in the DVLD system.
+The **Users Management** module handles application user accounts and connects each account to an existing person from the People module.
 
-The module was implemented after the People Management module and reuses the existing person-selection control and person data.
+It builds on the person-selection workflow already established in the project and adds account-specific rules such as username uniqueness, active status, validation, and password changes.
 
-## What the Module Provides
+## Features
 
-- View application users in a DataGridView.
-- Add a new user.
-- Edit an existing user.
-- Delete a user.
-- View user details.
+- View users in a `DataGridView`.
+- Add, edit, view, and delete users.
 - Change a user's password.
-- Filter users by User ID, Person ID, Full Name, User Name, or active status.
-- Display the number of records currently loaded.
-- Prevent assigning more than one user account to the same person.
-- Validate required user information before saving.
+- Filter by `UserID`, `PersonID`, full name, username, and active status.
+- Prevent multiple user accounts from being assigned to the same person.
+- Validate user input before saving.
+- Refresh the management list after database changes.
 
-## Main Forms
+## Forms
 
 | Form | Responsibility |
 |---|---|
-| `FrmMangeUser` | Displays users, filtering, CRUD actions, and user management commands. |
+| `FrmMangeUser` | Displays users, filtering, record count, and management actions. |
 | `FrmAddEditeUser` | Adds a new user or edits an existing user. |
 | `FrmShowUserInfo` | Displays information about a selected user. |
-| `FrmChangePassword` | Validates the current password and changes it. |
+| `FrmChangePassword` | Validates and changes a user's password. |
 
-## User Data
+## User Account Model
 
 A user account contains:
 
@@ -36,53 +33,34 @@ A user account contains:
 - `Password`
 - `IsActive`
 
-The management grid also displays the person's full name by joining the `Users` and `Person` tables.
+The management query also joins `Users` with `Person` so the grid can display the user's full name.
 
-## Add / Edit Workflow
+## Add & Edit Workflow
 
-Adding a user is divided into two stages:
+Creating a user starts by selecting an existing person through the reusable `CtrlPersonCardWithFilter` control. The form then collects the account information.
 
-1. Select an existing person using `CtrlPersonCardWithFilter`.
-2. Enter the login information and active status.
-
-Before moving to the login information stage, the form checks that:
+Before saving, the module verifies that:
 
 - A person has been selected.
-- The selected person is not already associated with another user.
+- The person does not already have a user account.
+- The username is valid and unique.
+- The password and confirmation match.
 
-For editing an existing user, the form loads the user and its related person, then allows the login information to be updated.
+`ClsUser` uses an Add/Update mode so the same business object can handle both inserting and updating a user.
 
-The form uses an `EnMode` value to distinguish between **Add** and **Update** operations.
+When editing, the existing username is allowed to remain unchanged. A uniqueness check is only required when the username is changed.
 
 ## Validation
 
-The user forms use WinForms validation through `Validating`, `ErrorProvider`, and `ValidateChildren()`.
+The WinForms forms use `Validating`, `ErrorProvider`, and `ValidateChildren()` to keep invalid data from reaching the save operation.
 
-Validation includes:
-
-- User name cannot be empty.
-- User name must be unique.
-- Password cannot be empty.
-- Confirmed password must match the password.
-- A selected person can have only one user account.
-
-When editing a user, the existing user name is allowed to remain unchanged; uniqueness is checked only when the value is changed.
+The validation rules cover required usernames and passwords, password confirmation, username uniqueness, and the relationship between a user account and its person.
 
 ## Filtering
 
-`FrmMangeUser` loads the users into a `DataTable` and uses its `DataView` for filtering.
+`FrmMangeUser` loads the users into a `DataTable` and filters the existing data through `DefaultView.RowFilter`.
 
-Available filters include:
-
-- User ID
-- Person ID
-- Full Name
-- User Name
-- Is Active
-
-For ID filters, numeric input is enforced. For name filtering, the form uses a `LIKE` expression through `DataView.RowFilter`.
-
-The active filter uses Boolean values:
+The active-state filter uses Boolean expressions such as:
 
 ```csharp
 IsActive = true
@@ -94,78 +72,69 @@ or
 IsActive = false
 ```
 
-The record count is refreshed after filtering and after CRUD operations.
+ID fields are validated as numeric input, while full-name filtering uses a `LIKE` expression. The record count is updated after filtering and after CRUD operations.
 
 ## Password Change
 
-The password-change form requires:
+`FrmChangePassword` follows a separate validation flow:
 
-1. Current password.
-2. New password.
-3. Confirmation of the new password.
+1. Load the selected user.
+2. Verify the current password.
+3. Validate the new password.
+4. Confirm the new password matches.
+5. Update the business object and save the change.
 
-The form validates the current password against the loaded user, checks that the new password is not empty, and verifies that the confirmation matches.
-
-After a successful change, the in-memory `ClsUser` object is also updated before saving.
+This keeps password changes separate from the general user editing workflow.
 
 ## Data Flow
 
 ```text
-FrmMangeUser / FrmAddEditeUser / FrmChangePassword
-                    │
-                    ▼
-              ClsUser
-          Business Layer
-                    │
-                    ▼
-           ClsUserDataAccess
-             Data Access
-                    │
-                    ▼
-               SQL Server
+WinForms UI
+    │
+    ▼
+ClsUser
+Business Layer
+    │
+    ▼
+ClsUserDataAccess
+Data Access Layer
+    │
+    ▼
+SQL Server
 ```
 
-`ClsUser` represents the business object and coordinates Add, Update, Find, Delete, existence checks, and password-related operations.
+`ClsUser` coordinates user operations while `ClsUserDataAccess` performs the database work through ADO.NET. `UserDTO` is used to transfer user data between the data-access and business layers.
 
-`ClsUserDataAccess` handles the SQL Server operations through ADO.NET and maps database results into `UserDTO` objects.
+## Implementation Notes
 
-## Important Implementation Decisions
+### Reuse instead of duplication
 
-### Reusing the Person Module
+A user is linked to an existing person rather than storing the person's information again. The People module's reusable selection control is therefore used when creating a user.
 
-A user is connected to an existing person instead of storing duplicated personal information. The existing person-selection control is reused when creating a user.
+### Add/Update through one business object
 
-### Add / Update Mode
+The internal mode in `ClsUser` allows `Save()` to determine whether the operation is an INSERT or UPDATE, keeping the form workflow consistent.
 
-`ClsUser` uses an internal mode to determine whether `Save()` should perform an INSERT or UPDATE operation.
+### Client-side filtering
 
-This keeps the form from needing separate business-layer methods for every save scenario.
+Filtering is performed on the already loaded `DataTable` through `DataView.RowFilter`. This avoids sending a new database query for every filter change in the management screen.
 
-### Refresh After Changes
+### Refresh after changes
 
-The management form reloads the users after Add, Edit, Delete, and password-change operations so the grid represents the current database state.
-
-### DataView Filtering
-
-Filtering is performed on the already loaded `DataTable` through `DefaultView.RowFilter`, avoiding a new database query for every keystroke in the filter box.
+The users list is reloaded after Add, Edit, Delete, and password-change operations so the displayed data matches the database state.
 
 ## Current Scope
 
-The Users module currently includes the core user-management operations and password changing.
+The core user-management workflow and password-change workflow are implemented.
 
-The Send Email and Phone actions are present in the UI but are explicitly marked as features under development and are not implemented yet.
+Email and phone actions are present in the UI but remain under development.
 
-## What I Practiced
+## Related Files
 
-This feature provided practice with:
-
-- Building a business object around Add / Update modes.
-- Working with DTOs between business and data-access layers.
-- Implementing CRUD operations with ADO.NET.
-- Reusing an existing WinForms UserControl across modules.
-- Validating related records before creating a user.
-- Implementing DataTable / DataView filtering.
-- Handling Boolean filtering with `DataView.RowFilter`.
-- Designing multi-step WinForms forms.
-- Using `ErrorProvider` and `ValidateChildren()` for form validation.
-- Keeping the UI synchronized with database changes.
+- [`FrmMangeUser.cs`](FrmMangeUser.cs)
+- [`FrmAddEditeUser.cs`](FrmAddEditeUser.cs)
+- [`FrmShowUserInfo.cs`](FrmShowUserInfo.cs)
+- [`FrmChangePassword.cs`](FrmChangePassword.cs)
+- [`../../DVIDBusinessLayer/ClsUser.cs`](../../DVIDBusinessLayer/ClsUser.cs)
+- [`../../DVIDDataAcessLayer/ClsUserDataAccess.cs`](../../DVIDDataAcessLayer/ClsUserDataAccess.cs)
+- [`../../DVIDDataAcessLayer/DTOs/UserDTO.cs`](../../DVIDDataAcessLayer/DTOs/UserDTO.cs)
