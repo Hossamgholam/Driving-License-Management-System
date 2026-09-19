@@ -354,6 +354,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmMangeUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mange User";
             this.Load += new System.EventHandler(this.FrmMangeUser_Load);
             this.cmsUser.ResumeLayout(false);

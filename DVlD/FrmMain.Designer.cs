@@ -234,6 +234,7 @@
             this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
             this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(346, 66);
             this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
+            this.manageApplicationTypesToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypesToolStripMenuItem_Click);
             // 
             // manageTestTypeToolStripMenuItem
             // 
@@ -287,6 +288,7 @@
             this.CurrentUserInfotoolStripMenuItem.Name = "CurrentUserInfotoolStripMenuItem";
             this.CurrentUserInfotoolStripMenuItem.Size = new System.Drawing.Size(246, 38);
             this.CurrentUserInfotoolStripMenuItem.Text = "Current User Info";
+            this.CurrentUserInfotoolStripMenuItem.Click += new System.EventHandler(this.CurrentUserInfotoolStripMenuItem_Click);
             // 
             // ChangeasswordtoolStripMenuItem
             // 
@@ -295,6 +297,7 @@
             this.ChangeasswordtoolStripMenuItem.Name = "ChangeasswordtoolStripMenuItem";
             this.ChangeasswordtoolStripMenuItem.Size = new System.Drawing.Size(246, 38);
             this.ChangeasswordtoolStripMenuItem.Text = "Change Password";
+            this.ChangeasswordtoolStripMenuItem.Click += new System.EventHandler(this.ChangeasswordtoolStripMenuItem_Click);
             // 
             // SignOuttoolStripMenuItem
             // 
@@ -303,6 +306,7 @@
             this.SignOuttoolStripMenuItem.Name = "SignOuttoolStripMenuItem";
             this.SignOuttoolStripMenuItem.Size = new System.Drawing.Size(246, 38);
             this.SignOuttoolStripMenuItem.Text = "Sign Out";
+            this.SignOuttoolStripMenuItem.Click += new System.EventHandler(this.SignOuttoolStripMenuItem_Click);
             // 
             // pictureBox1
             // 

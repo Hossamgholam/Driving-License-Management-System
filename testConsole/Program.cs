@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DVlD;
+using DVlD.Global_Class;
 
 namespace testConsole
 {
@@ -428,27 +430,76 @@ namespace testConsole
             #endregion
 
             #region
-            if (ClsUser.IsExistByPersonID(2054))
-            {
-                Console.WriteLine("yes exsit");
-            }
-            else
-            {
-                Console.WriteLine("not exsit");
-            }
+            //if (ClsUser.IsExistByPersonID(2054))
+            //{
+            //    Console.WriteLine("yes exsit");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("not exsit");
+            //}
 
-            if (ClsUser.IsExist("Hosam123", 20))
-            {
-                Console.WriteLine("you make update for this username so it is note exsit");
-            }
-            else
-            {
-                Console.WriteLine("you add new username so this nuser name exsit");
-            }
+            //if (ClsUser.IsExist("Hosam123", 20))
+            //{
+            //    Console.WriteLine("you make update for this username so it is note exsit");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("you add new username so this nuser name exsit");
+            //}
             #endregion
 
 
             #endregion
+            #endregion
+
+            #region login
+            // //ClsGlobalUser.RememberMe("Hossam", "hossam@1234");
+
+            // string username = "", password = "";
+
+            //if( ClsGlobalUser.GetStoredCreditional(ref username, ref password))
+            // {
+            //     Console.WriteLine($"my name is {username}, my passowrod {password}");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("no creditional");
+            // }
+            #endregion
+
+            #region Application type
+            //DataTable dt = ClsApplicationTypes.GetAll();
+
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    Console.WriteLine($"{dr["ID"]}\t {dr["Title"]}\t {dr["Fees"]}");
+            //}
+
+            /////
+            //ClsApplicationTypes applicationTypes = ClsApplicationTypes.Find(1);
+
+            //if (ClsApplicationTypes.IsExsit(1))
+            //{
+            //    Console.WriteLine($"{applicationTypes.ApplicationTypesID}\t {applicationTypes.ApplicationTypesTitle}\t {applicationTypes.ApplicationFees}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Exsit");
+            //}
+
+            ////update 
+            //applicationTypes.ApplicationTypesTitle="New Local Driving License Service";
+            //applicationTypes.ApplicationFees=15.00;
+
+            //if (applicationTypes.Save())
+            //{
+            //    Console.WriteLine("Save successful");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Note successful");
+            //}
             #endregion
         }
 

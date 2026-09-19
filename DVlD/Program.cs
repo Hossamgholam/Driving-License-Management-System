@@ -1,4 +1,8 @@
-﻿using DVlD.People;
+﻿using DVlD.App;
+using DVlD.App.ApplicationType;
+using DVlD.Login;
+
+using DVlD.People;
 using DVlD.User;
 using System;
 using System.Collections.Generic;
@@ -18,7 +22,8 @@ namespace DVlD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmLogIn());
         }
+        
     }
 }

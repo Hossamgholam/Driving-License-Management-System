@@ -44,6 +44,8 @@ namespace DVlD.User
             ctrlUserCard1.LoadUser(_UserID);
         }
 
+        
+        
         //validation
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
@@ -98,6 +100,9 @@ namespace DVlD.User
             }
         }
 
+        
+        
+        //button click events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.AutoValidate = AutoValidate.Disable;

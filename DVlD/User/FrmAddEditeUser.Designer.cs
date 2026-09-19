@@ -343,6 +343,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmAddEditeUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Update User";
             this.Load += new System.EventHandler(this.FrmAddEditeUser_Load);
             this.tpLongIngInfo.ResumeLayout(false);

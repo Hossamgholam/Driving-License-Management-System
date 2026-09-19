@@ -58,6 +58,10 @@
       <Project>{b5973e3e-4446-4d31-b0dc-025d1237491c}</Project>
       <Name>DVIDDataAcessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DVlD\DVlD.csproj">
+      <Project>{383c89be-b6e0-434a-bd4e-d96bc119cced}</Project>
+      <Name>DVlD</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

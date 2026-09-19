@@ -211,6 +211,7 @@
             this.Controls.Add(this.ctrlUserCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Password";
             this.Load += new System.EventHandler(this.FrmChangePassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
