@@ -14,13 +14,16 @@ The project is developed incrementally, with the application separated into pres
 - Three-layer application structure.
 - People Management.
 - Users Management.
+- Application Types Management.
+- User login, active-account checking, sign-out, and current-user access.
 - Person CRUD, search, and filtering.
 - User CRUD, filtering, validation, and password changes.
+- Application Type listing, editing, validation, and refresh workflow.
 - Reusable person-selection controls used across modules.
 
 ### Next Modules
 
-The remaining DVLD functionality will be added progressively, including applications, drivers, licenses, tests, and related services.
+The remaining DVLD functionality will be added progressively, including application registration, drivers, licenses, tests, and related services.
 
 ## Main Features
 
@@ -47,6 +50,30 @@ The Users module provides:
 - Change user passwords.
 
 [Users Management documentation](DVlD/User/README.md)
+
+### Application Types Management
+
+The Application Types module provides:
+
+- Display all predefined application types.
+- Show application type ID, title, and fees.
+- Open an existing application type for editing.
+- Validate title and fees before saving.
+- Update application type data through the business and data-access layers.
+- Refresh the management list after an update.
+
+[Application Types documentation](DVlD/App/ApplicationType/README.md)
+
+### Authentication
+
+The current login flow provides:
+
+- Login using username and password.
+- Remember-me functionality.
+- Active-account validation before entering the main application.
+- A global current-user reference used by the main form.
+- Sign-out and return to the login screen.
+- Access to the current user's information and password-change workflow.
 
 ## Architecture
 
@@ -113,17 +140,22 @@ Driving-License-Management-System/
 │   ├── DTOs/
 │   ├── HelperMethod/
 │   ├── ClsDataAccessSetting.cs
+│   ├── ClsApplicationTypesDataAccess.cs
 │   ├── ClsCountryDataAccess.cs
 │   ├── ClsPersonDataAccess.cs
 │   └── ClsUserDataAccess.cs
 │
 ├── DVIDBusinessLayer/
+│   ├── ClsApplicationTypes.cs
 │   ├── ClsCountry.cs
 │   ├── ClsPerson.cs
 │   └── ClsUser.cs
 │
 ├── DVlD/
+│   ├── App/
+│   │   └── ApplicationType/
 │   ├── Global Class/
+│   ├── Login/
 │   ├── People/
 │   ├── User/
 │   └── FrmMain.cs
@@ -139,6 +171,7 @@ Documentation focuses on meaningful features rather than individual classes or f
 
 - [People Management](DVlD/People/README.md)
 - [Users Management](DVlD/User/README.md)
+- [Application Types Management](DVlD/App/ApplicationType/README.md)
 - [Database Design SQL](DataBaseDesgin/SQLQuery2.sql)
 - [Database Mapping](DataBaseDesgin/dvldMaping.drawio)
 
