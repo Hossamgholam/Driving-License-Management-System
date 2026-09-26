@@ -101,7 +101,7 @@ namespace DVIDDataAcessLayer
             {
                 connection.Open();
                 SqlDataReader reader=command.ExecuteReader();
-                if (reader.Read())
+                if (reader.HasRows)
                 {
 
                 TableOfPerson.Load(reader);
@@ -157,6 +157,7 @@ namespace DVIDDataAcessLayer
             {
                person.PersonID = -1;
                 // Log the exception or handle it as needed
+                return person.PersonID;
 
             }
             finally

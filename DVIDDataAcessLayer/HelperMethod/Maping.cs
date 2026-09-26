@@ -43,5 +43,19 @@ namespace DVIDDataAcessLayer.HelperMethod
                 IsActive=(bool)reader["IsActive"],
             };
         }
+        public static ApplicationDTO MapingApplication(SqlDataReader reader)
+        {
+            return new ApplicationDTO()
+            {
+                ApplicationID=(int)reader["ApplicationID"],
+                ApplicationPersonID=(int)reader["ApplicantPersonID"],
+                ApplicationTypeID=(int)reader["ApplicationTypeID"],
+                CreatedByUserID=(int)reader["CreatedByUserID"],
+                ApplicationDate=(DateTime)reader["ApplicationDate"],
+                ApplicationStatus=(byte)reader["ApplicationStatus"],
+                LastStatusDate=(DateTime)reader["LastStatusDate"],
+                PaidFees=Convert.ToSingle(reader["PaidFees"])
+            };
+        }
     }
 }

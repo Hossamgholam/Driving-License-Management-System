@@ -242,6 +242,7 @@
             this.manageTestTypeToolStripMenuItem.Name = "manageTestTypeToolStripMenuItem";
             this.manageTestTypeToolStripMenuItem.Size = new System.Drawing.Size(346, 66);
             this.manageTestTypeToolStripMenuItem.Text = "Manage Test Type";
+            this.manageTestTypeToolStripMenuItem.Click += new System.EventHandler(this.manageTestTypeToolStripMenuItem_Click);
             // 
             // PeopleMenuStripItem
             // 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DVlD;
 using DVlD.Global_Class;
+using static DVIDBusinessLayer.ClsApplication;
 
 namespace testConsole
 {
@@ -500,6 +501,302 @@ namespace testConsole
             //{
             //    Console.WriteLine("Note successful");
             //}
+            #endregion
+
+            #region Test Type
+            #region data Access
+            #region Add
+            //string title = "Blood Test";
+            //string description = "A test to check blood sugar levels";
+            //float fees = 50.0f;
+
+            //int testID = ClsTestTypesDataAccess.Add(title, description, fees);
+            //if(testID != -1)
+            //{
+            //    Console.WriteLine($"Test type added with ID: {testID}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to add test type.");
+            //}
+            #endregion
+
+            #region Find
+            //int id = 1;
+            //string title = "";
+            //string description = "";
+            //float fees = 0.0f;
+
+            //if (ClsTestTypesDataAccess.Find(id, ref title, ref description, ref fees))
+            //{
+            //    Console.WriteLine($"Test type found: ID={id}, Title={title}, Description={description}, Fees={fees}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Test type not found.");
+            //}
+            #endregion
+
+            #region getAll
+            //DataTable testTypesTable = ClsTestTypesDataAccess.GetAll();
+            //foreach (DataRow row in testTypesTable.Rows)
+            //{
+            //    Console.WriteLine($"ID: {row["TestTypeID"]}, Title: {row["TestTypeTitle"]}, Description: {row["TestTypeDescription"]}, Fees: {row["TestTypeFees"]}");
+            //}
+
+            #endregion
+
+            #region is Exsit update
+            //int testTypeID = 7;
+            //if(ClsTestTypesDataAccess.IsExsit(testTypeID))
+            //{
+            //    Console.WriteLine($"Test type with ID {testTypeID} exists.");
+
+            //    // Update the test type
+            //    string newTitle = "Updated Test Title";
+            //    string newDescription = "Updated Test Description";
+            //    float newFees = 75.0f;
+
+            //    if(ClsTestTypesDataAccess.Update(testTypeID, newTitle, newDescription, newFees))
+            //    {
+            //        Console.WriteLine("Test type updated successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to update test type.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Test type with ID {testTypeID} does not exist.");
+            //}
+            #endregion
+            #endregion
+
+            #region Business Layer
+            //ClsTestTypes testType = ClsTestTypes.Find(1);
+            //if(testType != null)
+            //{
+            //    Console.WriteLine($"Test type found: ID={testType.ID}, Title={testType.Title}, Description={testType.Description}, Fees={testType.Fees}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Test type not found.");
+            //}
+
+            //DataTable allTestTypes = ClsTestTypes.GetAll();
+            //foreach (DataRow row in allTestTypes.Rows)
+            //{
+            //    Console.WriteLine($"ID: {row["TestTypeID"]}, Title: {row["TestTypeTitle"]}, Description: {row["TestTypeDescription"]}, Fees: {row["TestTypeFees"]}");
+            //}
+
+            //string newTitle = "New Test Type";
+            //string newDescription = "Description for new test type";
+            //float newFees = 100.0f;
+            //ClsTestTypes newTestType = new ClsTestTypes
+            //{
+            //    Title = newTitle,
+            //    Description = newDescription,
+            //    Fees = newFees
+            //};
+            //if(newTestType.Save())
+            //{
+            //    Console.WriteLine("New test type added successfully.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to add new test type.");
+            //}
+
+            //if(ClsTestTypes.IsExsit(7))
+            //{
+            //    ClsTestTypes existingTestType = ClsTestTypes.Find(7);
+            //    existingTestType.Title = "Updated Test Type Title";
+            //    existingTestType.Description = "Updated Description";
+            //    existingTestType.Fees = 150.0f;
+            //    if(existingTestType.Save())
+            //    {
+            //        Console.WriteLine("Test type updated successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to update test type.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Test type with ID {newTestType.ID} does not exist.");
+            //}
+            #endregion
+            #endregion
+
+            #region application
+            #region DataAccess
+            //ApplicationDTO application = new ApplicationDTO
+            //{
+            //    ApplicationPersonID = 2056,
+            //    ApplicationTypeID = 1,
+            //    CreatedByUserID = 1,
+            //    ApplicationDate = DateTime.Now,
+            //    ApplicationStatus = 1,
+            //    LastStatusDate = DateTime.Now,
+            //    PaidFees = 100.0f
+
+            //};
+            //if (ClsApplicationDataAccess.Add(application) != -1)
+            //{
+            //    Console.WriteLine("Application added successfully.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to add application.");
+            //}
+
+
+
+            //ApplicationDTO application = new ApplicationDTO();  
+            //if(ClsApplicationDataAccess.Find(11, ref application))
+            //{
+            //    Console.WriteLine($"Application found: ID={application.ApplicationID}, PersonID={application.ApplicationPersonID}, TypeID={application.ApplicationTypeID}, CreatedByUserID={application.CreatedByUserID}, Date={application.ApplicationDate}, Status={application.ApplicationStatus}, LastStatusDate={application.LastStatusDate}, PaidFees={application.PaidFees}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Application not found.");
+            //}
+
+
+
+            //DataTable applicationsTable = ClsApplicationDataAccess.GetAll();
+            //if(applicationsTable != null)
+            //{
+            //   for(int i = 0; i < 4; i++)
+            //    {
+            //        DataRow row = applicationsTable.Rows[i];
+            //        Console.WriteLine($"Application ID: {row["ApplicationID"]}, Person ID: {row["ApplicantPersonID"]}, Type ID: {row["ApplicationTypeID"]}, Created By User ID: {row["CreatedByUserID"]}, Date: {row["ApplicationDate"]}, Status: {row["ApplicationStatus"]}, Last Status Date: {row["LastStatusDate"]}, Paid Fees: {row["PaidFees"]}");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No applications found.");
+            //}
+
+
+
+
+            //ApplicationDTO applicationToUpdate = new ApplicationDTO();
+            //ClsApplicationDataAccess.Find(135, ref applicationToUpdate);
+            //applicationToUpdate.ApplicationStatus = 2; // Update the status
+            //applicationToUpdate.LastStatusDate = DateTime.Now; // Update the last status date
+            //applicationToUpdate.PaidFees = 150.0f; // Update the paid fees
+
+            //if(ClsApplicationDataAccess.Update(135, applicationToUpdate))
+            //{
+            //    Console.WriteLine("Application updated successfully.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to update application.");
+            //}
+
+
+            //if (ClsApplicationDataAccess.Delete(136))
+            //{
+            //    Console.WriteLine("Application deleted successfully.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to delete application.");
+            //}
+            #endregion
+            #region BusinessLayer
+            //ClsApplication application = new ClsApplication();
+            //application.ApplicationPersonID = 2056;
+            //application.ApplicationTypeID = 1;
+            //application.CreatedByUserID = 1;
+            //application.ApplicationDate = DateTime.Now;
+            //application.ApplicationStatus = _EnApplicationStatus.New;
+            //application.LastStatusDate = DateTime.Now;
+            //application.PaidFees = 100.0f;
+            
+            //if(application.Save())
+            //{
+            //    Console.WriteLine("Application saved successfully.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to save application.");
+            //}
+
+            //ClsApplication existingApplication = ClsApplication.Find(137);
+            //if(existingApplication != null)
+            //{
+            //    existingApplication.ApplicationStatus = _EnApplicationStatus.Canceled;
+            //    existingApplication.LastStatusDate = DateTime.Now;
+            //    existingApplication.PaidFees = 15.0f;
+            //    if (existingApplication.Save())
+            //    {
+            //        Console.WriteLine("Application updated successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to update application.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Application not found.");
+            //}
+
+
+
+            //if(ClsApplicationDataAccess.IsExsit(137))
+            //{
+            //    Console.WriteLine("Application exists.");
+            //    if(ClsApplicationDataAccess.Delete(137))
+            //    {
+            //        Console.WriteLine("Application deleted successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to delete application.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Application does not exist.");
+            //}
+
+            //ClsApplication applicationToFind = ClsApplication.Find(138);
+            //if(applicationToFind != null)
+            //{
+            //    Console.WriteLine("application found:");
+            //    if(ClsApplicationDataAccess.UpdateStatus(138, (byte)_EnApplicationStatus.Completed))
+            //    {
+            //        Console.WriteLine("Application status updated successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to update application status.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Application not found.");
+            //}
+
+
+            if(ClsApplicationDataAccess.DoesPersonHaveActiveApplication(2056, 1))
+            {
+                int applicationID = ClsApplicationDataAccess.FindActiveApplication(2056,2 );
+                Console.WriteLine("Person has an active application of the specified type.");
+                Console.WriteLine("Application ID: " + applicationID);
+            }
+            else
+            {
+                Console.WriteLine("Application does not exist.");
+            }
+
+            #endregion
             #endregion
         }
 

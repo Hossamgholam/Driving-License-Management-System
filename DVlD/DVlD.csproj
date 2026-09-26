@@ -135,6 +135,18 @@
     <Compile Include="testFormcs.Designer.cs">
       <DependentUpon>testFormcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\TestType\FrmManageTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestType\FrmManageTestType.Designer.cs">
+      <DependentUpon>FrmManageTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestType\FrmUpdateTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestType\FrmUpdateTest.Designer.cs">
+      <DependentUpon>FrmUpdateTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\Controls\CtrlUserCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +214,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="testFormcs.resx">
       <DependentUpon>testFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestType\FrmManageTestType.resx">
+      <DependentUpon>FrmManageTestType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestType\FrmUpdateTest.resx">
+      <DependentUpon>FrmUpdateTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\Controls\CtrlUserCard.resx">
       <DependentUpon>CtrlUserCard.cs</DependentUpon>
@@ -414,6 +432,8 @@
   <ItemGroup>
     <None Include="Resource\money 32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resource\TestType 512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

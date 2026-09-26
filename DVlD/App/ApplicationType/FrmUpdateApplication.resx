@@ -129,13 +129,13 @@
     <value>97, 9</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 45</value>
+    <value>319, 45</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>68</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>Add New Person</value>
+    <value>Update Application</value>
   </data>
   <data name="lblTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
