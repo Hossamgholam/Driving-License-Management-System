@@ -15,15 +15,19 @@ The project is developed incrementally, with the application separated into pres
 - People Management.
 - Users Management.
 - Application Types Management.
+- Test Types Management.
+- Application Core foundation.
 - User login, active-account checking, sign-out, and current-user access.
 - Person CRUD, search, and filtering.
 - User CRUD, filtering, validation, and password changes.
 - Application Type listing, editing, validation, and refresh workflow.
+- Test Type listing, editing, validation, and refresh workflow.
+- Application creation, lookup, update, deletion, active-application checks, and application status foundation.
 - Reusable person-selection controls used across modules.
 
 ### Next Modules
 
-The remaining DVLD functionality will be added progressively, including application registration, drivers, licenses, tests, and related services.
+The remaining DVLD functionality will be added progressively, including application registration UI, drivers, licenses, tests, and related services.
 
 ## Main Features
 
@@ -63,6 +67,35 @@ The Application Types module provides:
 - Refresh the management list after an update.
 
 [Application Types documentation](DVlD/App/ApplicationType/README.md)
+
+### Test Types Management
+
+The Test Types module provides:
+
+- Display the predefined test types.
+- Show test type ID, title, description, and fees.
+- Open an existing test type for editing.
+- Validate title, description, and fees before saving.
+- Update test type data through the business and data-access layers.
+- Refresh the management list after an update.
+
+[Test Types documentation](DVlD/Tests/TestType/README.md)
+
+### Application Core
+
+The Application Core provides the backend foundation for applications created in the DVLD system.
+
+It currently supports:
+
+- Creating applications.
+- Finding applications by ID.
+- Loading all applications.
+- Updating and deleting applications.
+- Checking for existing and active applications.
+- Managing application status and status dates at the data-access level.
+- Mapping application database records through ApplicationDTO.
+
+[Application Core documentation](DVIDBusinessLayer/Application/README.md)
 
 ### Authentication
 
@@ -140,15 +173,20 @@ Driving-License-Management-System/
 │   ├── DTOs/
 │   ├── HelperMethod/
 │   ├── ClsDataAccessSetting.cs
+│   ├── ClsApplicationDataAccess.cs
 │   ├── ClsApplicationTypesDataAccess.cs
 │   ├── ClsCountryDataAccess.cs
 │   ├── ClsPersonDataAccess.cs
+│   ├── ClsTestTypesDataAccess.cs
 │   └── ClsUserDataAccess.cs
 │
 ├── DVIDBusinessLayer/
+│   ├── Application/
+│   ├── ClsApplication.cs
 │   ├── ClsApplicationTypes.cs
 │   ├── ClsCountry.cs
 │   ├── ClsPerson.cs
+│   ├── ClsTestTypes.cs
 │   └── ClsUser.cs
 │
 ├── DVlD/
@@ -157,6 +195,8 @@ Driving-License-Management-System/
 │   ├── Global Class/
 │   ├── Login/
 │   ├── People/
+│   ├── Tests/
+│   │   └── TestType/
 │   ├── User/
 │   └── FrmMain.cs
 │
@@ -172,6 +212,8 @@ Documentation focuses on meaningful features rather than individual classes or f
 - [People Management](DVlD/People/README.md)
 - [Users Management](DVlD/User/README.md)
 - [Application Types Management](DVlD/App/ApplicationType/README.md)
+- [Test Types Management](DVlD/Tests/TestType/README.md)
+- [Application Core](DVIDBusinessLayer/Application/README.md)
 - [Database Design SQL](DataBaseDesgin/SQLQuery2.sql)
 - [Database Mapping](DataBaseDesgin/dvldMaping.drawio)
 
