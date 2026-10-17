@@ -124,6 +124,7 @@
             this.LocalLicensetoolStripMenuItem.Name = "LocalLicensetoolStripMenuItem";
             this.LocalLicensetoolStripMenuItem.Size = new System.Drawing.Size(271, 38);
             this.LocalLicensetoolStripMenuItem.Text = "Local License";
+            this.LocalLicensetoolStripMenuItem.Click += new System.EventHandler(this.LocalLicensetoolStripMenuItem_Click);
             // 
             // InternationalLicensetoolStripMenuItem
             // 
@@ -183,6 +184,7 @@
             this.LocalDrivingLicenseApplicationtoolStripMenuItem.Name = "LocalDrivingLicenseApplicationtoolStripMenuItem";
             this.LocalDrivingLicenseApplicationtoolStripMenuItem.Size = new System.Drawing.Size(446, 38);
             this.LocalDrivingLicenseApplicationtoolStripMenuItem.Text = "Local Driving License Application";
+            this.LocalDrivingLicenseApplicationtoolStripMenuItem.Click += new System.EventHandler(this.LocalDrivingLicenseApplicationtoolStripMenuItem_Click);
             // 
             // InternatioinalLicenseApplicationstoolStripMenuItem
             // 

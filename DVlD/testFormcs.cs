@@ -19,7 +19,7 @@ namespace DVlD
 
         private void testFormcs_Load(object sender, EventArgs e)
         {
-            
+            ctrDrivingLicenseApplicationInfo1.LoadInfo(46);
         }
     }
 }

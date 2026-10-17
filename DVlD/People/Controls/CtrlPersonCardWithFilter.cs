@@ -40,7 +40,10 @@ namespace DVlD.People.Controls
             get { return _EnableFilterGroup; }
         }
 
-
+        public void FocusFilterGroup()
+        {
+            TxtFilter.Focus();
+        }
         private void CtrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
             CmbFilter.SelectedIndex = 0;

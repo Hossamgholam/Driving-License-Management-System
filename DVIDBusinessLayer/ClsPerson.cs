@@ -40,6 +40,7 @@ namespace DVIDBusinessLayer
         }
 
 
+        public string FullName { get { return FirstName+" "+SecondName+" "+ThirdName+" "+LastName; } }
 
         public ClsPerson()
         {

@@ -90,7 +90,7 @@ namespace DVIDDataAcessLayer
 
             return Found;
         }
-        public static int FindActiveApplication(int applicationiPersonID, int applicationTypeID)
+        public static int GetActiveApplicationID(int applicationiPersonID, int applicationTypeID)
         {
             int ActiveApplication = -1;
             SqlConnection connection = new SqlConnection(ClsDataAccessSetting.ConnectionString);
@@ -116,6 +116,43 @@ namespace DVIDDataAcessLayer
             finally { connection.Close(); }
             return ActiveApplication;
         }
+
+        public static int GetActiveApplicationIDforLicense(int ApplicationPersonID,int ApplicationTypeID,int LicenseClassID)
+        {
+            int ApplicationActive = -1;
+            SqlConnection conn = new SqlConnection(ClsDataAccessSetting.ConnectionString);
+            string query = @"select Applications.ApplicationID from Applications 
+                             inner join LocalDrivingLicenseApplications
+                             on LocalDrivingLicenseApplications.ApplicationID=Applications.ApplicationID
+                             where 
+                             Applications.ApplicantPersonID=@ApplicantPersonID
+                             and Applications.ApplicationTypeID=@ApplicationTypeID
+                             and LocalDrivingLicenseApplications.LicenseClassID=@LicenseClassID
+                             and Applications.ApplicationStatus=1";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@ApplicantPersonID", ApplicationPersonID);
+            cmd.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            cmd.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                conn.Open();
+                object result= cmd.ExecuteScalar();
+                if(result!=null&& int.TryParse(result.ToString(), out int returnedID))
+                {
+                    ApplicationActive = returnedID;
+                }
+            }catch(Exception ex)
+            {
+                return -1;
+            }
+            finally { conn.Close(); }
+
+
+            return (ApplicationActive);
+
+        }
+
         public static DataTable GetAll()
         {
             DataTable dt = new DataTable();
@@ -183,12 +220,12 @@ namespace DVIDDataAcessLayer
             SqlConnection con=new SqlConnection(ClsDataAccessSetting.ConnectionString);
             string query = @"
                             update Applications set 
-                            ApplicationStatus=@ApplicationStatus,
+                            ApplicationStatus=@NewStatus,
                             LastStatusDate=@LastStatusDate 
                             where ApplicationID=@ApplicationID
                            ";
             SqlCommand cmd=new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@ApplicationStatus", newStatus);
+            cmd.Parameters.AddWithValue("@NewStatus", newStatus);
             cmd.Parameters.AddWithValue("@LastStatusDate", DateTime.Now);
             cmd.Parameters.AddWithValue("@ApplicationID", applicationID);
             try
@@ -252,9 +289,14 @@ namespace DVIDDataAcessLayer
 
             return Found;
         }
+
         public static bool DoesPersonHaveActiveApplication(int applicationPersonID, int applicationTypeID)
         {
-            return (FindActiveApplication(applicationPersonID, applicationTypeID)!=-1);
+            return (GetActiveApplicationID(applicationPersonID, applicationTypeID)!=-1);
+        }
+        public static bool DoesPersonHaveActiveApplicationForLicenseClass(int ApplicationPersonID, int ApplicationTypeID, int LicenseClassID)
+        {
+            return(GetActiveApplicationIDforLicense(ApplicationPersonID,ApplicationTypeID,LicenseClassID)!=-1);
         }
     }
 }

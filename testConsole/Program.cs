@@ -717,7 +717,7 @@ namespace testConsole
             //application.ApplicationStatus = _EnApplicationStatus.New;
             //application.LastStatusDate = DateTime.Now;
             //application.PaidFees = 100.0f;
-            
+
             //if(application.Save())
             //{
             //    Console.WriteLine("Application saved successfully.");
@@ -785,19 +785,150 @@ namespace testConsole
             //}
 
 
-            if(ClsApplicationDataAccess.DoesPersonHaveActiveApplication(2056, 1))
-            {
-                int applicationID = ClsApplicationDataAccess.FindActiveApplication(2056,2 );
-                Console.WriteLine("Person has an active application of the specified type.");
-                Console.WriteLine("Application ID: " + applicationID);
-            }
-            else
-            {
-                Console.WriteLine("Application does not exist.");
-            }
+            //if(ClsApplicationDataAccess.DoesPersonHaveActiveApplication(2056, 1))
+            //{
+            //    int applicationID = ClsApplicationDataAccess.GetActiveApplicationID(2056,2 );
+            //    Console.WriteLine("Person has an active application of the specified type.");
+            //    Console.WriteLine("Application ID: " + applicationID);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Application does not exist.");
+            //}
+
+
+            //ClsApplication applicationToFind = ClsApplication.Find(139);    
+            //applicationToFind.New();
+
+            //if(applicationToFind.GetActiveApplicationID(_EnApplicationType.NewLocalDrivingLicense) != -1)
+            //{
+            //    Console.WriteLine("Person has an active application of the specified type.");
+            //    Console.WriteLine("Application ID: " + applicationToFind.GetActiveApplicationID(_EnApplicationType.NewLocalDrivingLicense));
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No active application of the specified type found for the person.");
+            //}
+
+            //applicationToFind.Canceled(); 
+
+            //if (applicationToFind.GetActiveApplicationID(_EnApplicationType.NewLocalDrivingLicense) != -1)
+            //{
+            //    Console.WriteLine("Person has an active application of the specified type.");
+            //    Console.WriteLine("Application ID: " + applicationToFind.GetActiveApplicationID(_EnApplicationType.NewLocalDrivingLicense));
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No active application of the specified type found for the person.");
+            //}
+
+
+            //applicationToFind.New();
+            //if (applicationToFind.DoesPersonHaveActiveApplication((int)_EnApplicationType.NewLocalDrivingLicense))
+            //{
+            //    Console.WriteLine("Person has an active application of the specified type.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No active application of the specified type found for the person.");
+            //}
 
             #endregion
             #endregion
+
+            #region Local Driving License Application
+            //DataTable dt = ClsLocalDrivingLicenseApplicationData.GetAll();
+            //foreach(DataRow row in dt.Rows)
+            //{
+            //    Console.WriteLine($" Application ID: {row[0]}, License Class ID: {row[1]} national ID: {row[2]} Full Name: {row[3]} applicationDate: {row[4]} passTest: {row[5]} Status: {row[6]}");
+            //}
+
+            #endregion
+
+            #region license class
+
+            #region add license class
+            //ClsLicenseClasses licenseClass = new ClsLicenseClasses
+            //{
+            //    ClassName = "Class A",
+            //    ClassDescription = "Description for Class A",
+            //    MinimumAllowedAge = 18,
+            //    DefaultValidityLength = 5,
+            //    ClassFees = 100.0f
+            //};
+            //if(licenseClass.Save())
+            //{
+            //    Console.WriteLine("License class saved successfully.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed to save license class.");
+            //}
+            #endregion
+
+            #region find& update license class
+            //if (ClsLicenseClasses.IsExists(10))
+            //{
+            //    ClsLicenseClasses existingClass = ClsLicenseClasses.Find(10);
+            //    existingClass.ClassName = "Updated Class A";
+            //    existingClass.ClassDescription = "Updated description for Class A";
+            //    existingClass.MinimumAllowedAge = 21;
+            //    existingClass.DefaultValidityLength = 10;
+            //    existingClass.ClassFees = 150.0f;
+            //    if (existingClass.Save())
+            //    {
+            //        Console.WriteLine("License class updated successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to update license class.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("License class does not exist.");
+            //}
+            #endregion
+
+            #region Delete license class
+
+            //if (ClsLicenseClasses.IsExists(9))
+            //{
+            //    if (ClsLicenseClasses.Delete(9))
+            //    {
+            //        Console.WriteLine("License class deleted successfully.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Failed to delete license class.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("License class does not exist.");
+            //}
+            #endregion
+
+            //DataTable allLicenseClasses = ClsLicenseClasses.GetAll();
+            //foreach (DataRow row in allLicenseClasses.Rows)
+            //{
+            //    Console.WriteLine($"ID: {row["LicenseClassID"]}, Name: {row["ClassName"]}, Description: {row["ClassDescription"]}, Minimum Age: {row["MinimumAllowedAge"]}, Validity Length: {row["DefaultValidityLength"]}, Fees: {row["ClassFees"]}");
+            //}
+
+            #endregion
+
+            #region License
+            if(ClslicensesData.ISExsit(1029, 2))
+            {
+                Console.WriteLine("License exists for the person and class.");
+            }
+            else
+            {
+                Console.WriteLine("License does not exist for the person and class.");
+            }
+            #endregion
+
+
         }
 
     }
