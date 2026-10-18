@@ -1,92 +1,57 @@
 # Application Core
 
-The Application Core provides the business and data-access foundation for applications created in the DVLD system.
-
-An application represents a request made by a person and stores its application type, creator, dates, status, and paid fees.
+The Application Core is the shared business and data-access foundation for DVLD applications. A base application stores the applicant, application type, creator, dates, status, and paid fees. The Local Driving License Applications module builds on this class.
 
 ## Application Data
 
-The current model contains:
+Main fields: `ApplicationID`, `ApplicationPersonID`, `ApplicationTypeID`, `CreatedByUserID`, `ApplicationDate`, `ApplicationStatus`, `LastStatusDate`, and `PaidFees`.
 
-- `ApplicationID`
-- `ApplicationPersonID`
-- `ApplicationTypeID`
-- `CreatedByUserID`
-- `ApplicationDate`
-- `ApplicationStatus`
-- `LastStatusDate`
-- `PaidFees`
-
-Application status is represented in the business layer as:
-
-- `New`
-- `Canceled`
-- `Completed`
+The `EnApplicationStatus` enum defines `New = 1`, `Canceled = 2`, and `Completed = 3`. The `StatusName` property returns a display string for the current status. Loaded applications also include related person, application-type, and user information.
 
 ## Current Scope
 
-The current implementation provides:
+- Create and update applications through `Save()`.
+- Find an application by ID and load all applications.
+- Update and delete application records.
+- Find an active application by applicant and application type.
+- Find an active local application by applicant, application type, and license class.
+- Check whether a person has an active application of a given type.
+- Update application status through `UpdateStatus()`; the data-access method also updates `LastStatusDate`.
+- Use convenience methods to set an application to `New`, `Canceled`, or `Completed`.
+- Map database records through `ApplicationDTO`.
 
-- Creating an application through the business and data-access layers.
-- Finding an application by ID.
-- Loading all applications.
-- Updating application data.
-- Deleting an application.
-- Checking whether an application exists.
-- Finding an active application for a person and application type.
-- Checking whether a person already has an active application of a specific type.
-- Updating application status and the last status date at the data-access level.
-- Mapping database application records into `ApplicationDTO` objects.
+Active-application queries treat `ApplicationStatus = 1` as active. The license-class-specific query joins `Applications` with `LocalDrivingLicenseApplications`.
 
-The current commit focuses on the backend foundation. A dedicated application-registration UI has not been implemented yet.
-
-## Workflow
+## Architecture
 
 ```text
-ClsApplication
-      │
-      ├── Add / Update / Find / GetAll / Delete
-      │
-      ▼
-ApplicationDTO
-      │
-      ▼
+WinForms feature
+      |
+      v
+ClsApplication / ClsLocalDrivingLicenseApplication
+      |
+      v
+ApplicationDTO and business rules
+      |
+      v
 ClsApplicationDataAccess
-      │
-      ├── SQL Server CRUD operations
-      ├── Active-application checks
-      └── Status update
+      |
+      v
+SQL Server
 ```
 
 ## Layer Responsibilities
 
-### Business Layer
+- `DVIDBusinessLayer/ClsApplication.cs` represents the base application, status values, related records, lookup, status changes, and active-application checks.
+- `DVIDDataAcessLayer/ClsApplicationDataAccess.cs` performs parameterized SQL Server operations, retrieves generated IDs with `SCOPE_IDENTITY()`, queries active applications, and updates status dates.
+- `ApplicationDTO.cs` transfers application data between layers; `Maping.cs` maps database records into the DTO.
 
-- `ClsApplication.cs`
-  - Represents an application.
-  - Defines application status values.
-  - Loads related application type and user information when an application is found.
-  - Uses Add/Update mode through `Save()`.
-  - Exposes application lookup and deletion operations.
+## Related Feature
 
-### Data Access Layer
-
-- `ClsApplicationDataAccess.cs`
-  - Performs SQL Server CRUD operations.
-  - Uses parameterized SQL commands.
-  - Retrieves generated application IDs with `SCOPE_IDENTITY()`.
-  - Finds active applications by person and application type.
-  - Updates application status and status date.
-  - Maps database rows into `ApplicationDTO`.
-
-- `ApplicationDTO.cs`
-  - Transfers application data between the data-access and business layers.
-
-- `Maping.cs`
-  - Maps an application database row into an `ApplicationDTO`.
+See [Local Driving License Applications](../../DVlD/App/LocalDrivingLicenseApplications/README.md) for the registration, edit, list, and details workflow built on this core.
 
 ## Current Limitations
 
-- No application-registration form is implemented yet.
-- Application status update is currently exposed at the data-access level rather than as a public business-layer operation.
-- Validation and higher-level business rules will be added as the application-registration workflow is built.
+- **Existence-check issue:** `ClsApplication.IsExsit(int)` currently calls itself recursively instead of delegating to `ClsApplicationDataAccess.IsExsit(int)`. Correct it before using this method.
+- The local-application workflow saves the base application and local detail separately rather than in one transaction.
+- The project is still in active development; these changes do not establish full end-to-end test coverage.
